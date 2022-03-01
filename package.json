@@ -2,16 +2,19 @@
   "name": "hatchways-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha",
+    "test": "mocha",
     "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apicache": "^1.6.3",
     "axios": "^0.26.0",
+    "cache-manager": "^3.6.0",
+    "chai-http": "^4.3.0",
     "express": "^4.17.3"
   },
   "devDependencies": {

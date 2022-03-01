@@ -42,12 +42,14 @@ router.get('/', (req,res) => {
         for (let i = 0; i < values.length; i++) {
             posts.push(...values[i].data.posts)
         }
-        //remove duplicates
+        // move into set to remove duplicates
         let postsAsSet = {}
         for ( let i = 0; i < posts.length; i++) {
             postsAsSet[posts[i].id] = posts[i];
         }
+        // set back to array
         posts = Object.values(postsAsSet);
+        //sort by criteria specified, or not specified
         posts = sorting(posts,req.query.sortBy,req.query.direction);
         res.status(200).send(posts);
     });
