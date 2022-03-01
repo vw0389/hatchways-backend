@@ -48,6 +48,7 @@ router.get('/', (req,res) => {
             postsAsSet[posts[i].id] = posts[i];
         }
         posts = Object.values(postsAsSet);
+        posts = sorting(posts,req.query.sortBy,req.query.direction);
         res.status(200).send(posts);
     });
 
